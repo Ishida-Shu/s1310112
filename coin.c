@@ -9,6 +9,14 @@ const char* coin_toss() {
 int main() {
     srand(time(0)); // Initialize random number generator
 
+    char name[50];
+    printf("Who are you?\n> ");
+    fgets(name, sizeof(name), stdin);
+    // Remove trailing newline character from name
+    name[strcspn(name, "\n")] = '\0';
+
+    printf("Hello, %s!\n", name);
+
     printf("Tossing a coin...\n");
     int heads = 0;
     int tails = 0;
@@ -27,5 +35,6 @@ int main() {
 
     return 0;
 }
+
 
 
